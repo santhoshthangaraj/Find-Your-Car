@@ -1,0 +1,57 @@
+﻿@model FindYourCar.Models.ViewModel.SearchViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("Search", "Search", FormMethod.Post))
+{
+
+    <h4>Create a new account.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Make, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Make, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Model, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Model, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MinPrice, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.MinPrice, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MaxPrice, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.MaxPrice, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Color, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Color, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <br />
+            <input type="submit" class="btn btn-primary" value="Search" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

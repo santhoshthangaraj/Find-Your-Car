@@ -1,0 +1,40 @@
+﻿@using FindYourCar.Models.ViewModel
+@model List<FindYourCar.Models.ViewModel.CarViewModel>
+
+@{
+    ViewBag.Title = "SearchResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SearchResult</h2>
+
+@foreach (CarViewModel car in Model)
+{
+    String photoPath = "~/img/UserCars/"+@car.Id +".jpg";
+    
+    <div class="row">
+        <div class="col-xs-2">
+            @* Car image must be added *@
+            <img src=@photoPath />
+        </div>
+        <div class="col-xs-2">
+            Make: @car.Make
+        </div>
+        <div class="col-xs-2">
+            Model: @car.Model
+        </div>
+        <div class="col-xs-2">
+            Price: @car.Price
+        </div>
+        <div class="col-xs-2">
+            Mileage: @car.Mileage
+        </div>
+        <div class="col-xs-2">
+            Color: @car.Color
+        </div>
+    </div>
+}
+<p>
+    |
+    @Html.ActionLink("Back to List", "Index")
+</p>

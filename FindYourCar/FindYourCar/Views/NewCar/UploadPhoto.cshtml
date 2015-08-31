@@ -1,0 +1,24 @@
+﻿@model FindYourCar.Models.ViewModel.CarPhotoViewModel
+
+@{
+    ViewBag.Title = "UploadPhoto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UploadPhoto</h2>
+
+@using (Html.BeginForm("Upload", "NewCar", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <label for="file" class="col-md-10">Upload Image:</label>
+    <input type="file" name="file" id="file"  class=" col-md-10 " />
+    <div class="form-group">
+        <div class="col-md-10">
+            <br/>
+            <input type="submit" value="Upload" class="btn btn-primary"/>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
