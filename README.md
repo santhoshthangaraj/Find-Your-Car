@@ -8,7 +8,9 @@ Project Overview:
   
   Roles:
   
-• Designed ER diagrams, Database Schema
+• Designed ER diagrams, Database Schema.
+
 •	Designed a website for online sale of cars based on MVC architecture and implemented the UI design in Microsoft Visual Studio with back end database as SQL Server.
+
 •	Created procedures, triggers in SQL Server, linked them using C# for accessing and maintaining data
 
